@@ -28,6 +28,11 @@ public class ContactBuilder {
         return this;
     }
 
+    public ContactBuilder withUser(User user) {
+        contact.setUser(user);
+        return this;
+    }
+
     public Contact build() {
         return contact;
     }
