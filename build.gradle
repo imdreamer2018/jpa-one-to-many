@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.thoughtworks'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'mysql:mysql-connector-java'
+	implementation group: 'org.flywaydb', name: 'flyway-core', version: '5.2.4'
+	implementation 'net.minidev:json-smart:2.4.7'
+	implementation 'org.projectlombok:lombok:1.18.4'
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.4'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "ch.vorburger.mariaDB4j:mariaDB4j:2.3.0"
+	testImplementation "org.mariadb.jdbc:mariadb-java-client:2.2.5"
+}
+
+test {
+	useJUnitPlatform()
+}
